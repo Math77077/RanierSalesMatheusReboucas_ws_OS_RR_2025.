@@ -1,0 +1,284 @@
+Tina version 3.8.5 -- 04/19/25 -- LAAS/CNRS
+
+mode -W
+
+INPUT NET ------------------------------------------------------- 
+
+parsed net AlgoritmoDoBanqueiro
+
+7 places, 6 transitions, 21 arcs
+
+net AlgoritmoDoBanqueiro
+tr Allocate_P0 [0,0] Allocate_P0_Trigger Available_R0 Need_P0_R0 Request_P0_R0  -> Allocation_P0_R0 
+tr Check_Safety_P0_Fail [0,0] Request_P0_R0 Safe_State  -> Deny_P0_Trigger 
+tr Check_Safety_P0_OK [0,0] Request_P0_R0 Safe_State  -> Allocate_P0_Trigger 
+tr Deny_P0 [0,0] Deny_P0_Trigger Request_P0_R0  -> Available_R0 Need_P0_R0 Safe_State 
+tr Finish_P0 [0,0] Allocation_P0_R0  -> Available_R0 
+tr Request_P0 [0,0] Available_R0 Need_P0_R0  -> Request_P0_R0 
+pl Available_R0 (3)
+pl Need_P0_R0 (7)
+pl Safe_State (1)
+
+0.000s
+
+REACHABILITY ANALYSIS ------------------------------------------- 
+
+bounded
+
+24 classe(s), 30 transition(s)
+
+CLASSES:
+
+class 0
+    marking
+	Available_R0*3 Need_P0_R0*7 Safe_State
+    domain
+	0 <= Request_P0 <= 0
+
+class 1
+    marking
+	Available_R0*2 Need_P0_R0*6 Request_P0_R0 Safe_State
+    domain
+	0 <= Check_Safety_P0_Fail <= 0
+	0 <= Check_Safety_P0_OK <= 0
+	0 <= Request_P0 <= 0
+
+class 2
+    marking
+	Available_R0*2 Deny_P0_Trigger Need_P0_R0*6
+    domain
+	0 <= Request_P0 <= 0
+
+class 3
+    marking
+	Allocate_P0_Trigger Available_R0*2 Need_P0_R0*6
+    domain
+	0 <= Request_P0 <= 0
+
+class 4
+    marking
+	Available_R0 Need_P0_R0*5 Request_P0_R0*2 Safe_State
+    domain
+	0 <= Check_Safety_P0_Fail <= 0
+	0 <= Check_Safety_P0_OK <= 0
+	0 <= Request_P0 <= 0
+
+class 5
+    marking
+	Available_R0 Deny_P0_Trigger Need_P0_R0*5 Request_P0_R0
+    domain
+	0 <= Deny_P0 <= 0
+	0 <= Request_P0 <= 0
+
+class 6
+    marking
+	Allocate_P0_Trigger Available_R0 Need_P0_R0*5 Request_P0_R0
+    domain
+	0 <= Allocate_P0 <= 0
+	0 <= Request_P0 <= 0
+
+class 7
+    marking
+	Need_P0_R0*4 Request_P0_R0*3 Safe_State
+    domain
+	0 <= Check_Safety_P0_Fail <= 0
+	0 <= Check_Safety_P0_OK <= 0
+
+class 8
+    marking
+	Available_R0*2 Need_P0_R0*6 Safe_State
+    domain
+	0 <= Request_P0 <= 0
+
+class 9
+    marking
+	Deny_P0_Trigger Need_P0_R0*4 Request_P0_R0*2
+    domain
+	0 <= Deny_P0 <= 0
+
+class 10
+    marking
+	Allocation_P0_R0 Need_P0_R0*4
+    domain
+	0 <= Finish_P0 <= 0
+
+class 11
+    marking
+	Allocate_P0_Trigger Need_P0_R0*4 Request_P0_R0*2
+    domain
+
+class 12
+    marking
+	Available_R0 Need_P0_R0*5 Request_P0_R0 Safe_State
+    domain
+	0 <= Check_Safety_P0_Fail <= 0
+	0 <= Check_Safety_P0_OK <= 0
+	0 <= Request_P0 <= 0
+
+class 13
+    marking
+	Available_R0 Need_P0_R0*4
+    domain
+	0 <= Request_P0 <= 0
+
+class 14
+    marking
+	Available_R0 Deny_P0_Trigger Need_P0_R0*5
+    domain
+	0 <= Request_P0 <= 0
+
+class 15
+    marking
+	Allocate_P0_Trigger Available_R0 Need_P0_R0*5
+    domain
+	0 <= Request_P0 <= 0
+
+class 16
+    marking
+	Need_P0_R0*4 Request_P0_R0*2 Safe_State
+    domain
+	0 <= Check_Safety_P0_Fail <= 0
+	0 <= Check_Safety_P0_OK <= 0
+
+class 17
+    marking
+	Need_P0_R0*3 Request_P0_R0
+    domain
+
+class 18
+    marking
+	Deny_P0_Trigger Need_P0_R0*4 Request_P0_R0
+    domain
+	0 <= Deny_P0 <= 0
+
+class 19
+    marking
+	Allocate_P0_Trigger Need_P0_R0*4 Request_P0_R0
+    domain
+
+class 20
+    marking
+	Available_R0 Need_P0_R0*5 Safe_State
+    domain
+	0 <= Request_P0 <= 0
+
+class 21
+    marking
+	Need_P0_R0*4 Request_P0_R0 Safe_State
+    domain
+	0 <= Check_Safety_P0_Fail <= 0
+	0 <= Check_Safety_P0_OK <= 0
+
+class 22
+    marking
+	Deny_P0_Trigger Need_P0_R0*4
+    domain
+
+class 23
+    marking
+	Allocate_P0_Trigger Need_P0_R0*4
+    domain
+
+
+REACHABILITY GRAPH:
+
+0 -> Request_P0 in [0,0]/1
+1 -> Check_Safety_P0_Fail in [0,0]/2, Check_Safety_P0_OK in [0,0]/3, Request_P0 in [0,0]/4
+2 -> Request_P0 in [0,0]/5
+3 -> Request_P0 in [0,0]/6
+4 -> Check_Safety_P0_Fail in [0,0]/5, Check_Safety_P0_OK in [0,0]/6, Request_P0 in [0,0]/7
+5 -> Deny_P0 in [0,0]/8, Request_P0 in [0,0]/9
+6 -> Allocate_P0 in [0,0]/10, Request_P0 in [0,0]/11
+7 -> Check_Safety_P0_Fail in [0,0]/9, Check_Safety_P0_OK in [0,0]/11
+8 -> Request_P0 in [0,0]/12
+9 -> Deny_P0 in [0,0]/12
+10 -> Finish_P0 in [0,0]/13
+11 -> 
+12 -> Check_Safety_P0_Fail in [0,0]/14, Check_Safety_P0_OK in [0,0]/15, Request_P0 in [0,0]/16
+13 -> Request_P0 in [0,0]/17
+14 -> Request_P0 in [0,0]/18
+15 -> Request_P0 in [0,0]/19
+16 -> Check_Safety_P0_Fail in [0,0]/18, Check_Safety_P0_OK in [0,0]/19
+17 -> 
+18 -> Deny_P0 in [0,0]/20
+19 -> 
+20 -> Request_P0 in [0,0]/21
+21 -> Check_Safety_P0_Fail in [0,0]/22, Check_Safety_P0_OK in [0,0]/23
+22 -> 
+23 -> 
+
+0.000s
+
+LIVENESS ANALYSIS ----------------------------------------------- 
+
+not live
+possibly reversible
+
+5 dead classe(s), 5 live classe(s)
+0 dead transition(s), 0 live transition(s)
+
+dead classe(s): 23 22 19 17 11
+
+STRONG CONNECTED COMPONENTS:
+
+0 : 22
+1 : 23
+2 : 21
+3 : 20
+4 : 18
+5 : 14
+6 : 19
+7 : 15
+8 : 16
+9 : 12
+10 : 8
+11 : 9
+12 : 5
+13 : 2
+14 : 17
+15 : 13
+16 : 10
+17 : 11
+18 : 6
+19 : 3
+20 : 7
+21 : 4
+22 : 1
+23 : 0
+
+SCC GRAPH:
+
+0 ->
+1 ->
+2 -> Check_Safety_P0_Fail/0, Check_Safety_P0_OK/1
+3 -> Request_P0/2
+4 -> Deny_P0/3
+5 -> Request_P0/4
+6 ->
+7 -> Request_P0/6
+8 -> Check_Safety_P0_Fail/4, Check_Safety_P0_OK/6
+9 -> Check_Safety_P0_Fail/5, Check_Safety_P0_OK/7, Request_P0/8
+10 -> Request_P0/9
+11 -> Deny_P0/9
+12 -> Deny_P0/10, Request_P0/11
+13 -> Request_P0/12
+14 ->
+15 -> Request_P0/14
+16 -> Finish_P0/15
+17 ->
+18 -> Allocate_P0/16, Request_P0/17
+19 -> Request_P0/18
+20 -> Check_Safety_P0_Fail/11, Check_Safety_P0_OK/17
+21 -> Check_Safety_P0_Fail/12, Check_Safety_P0_OK/18, Request_P0/20
+22 -> Check_Safety_P0_Fail/13, Check_Safety_P0_OK/19, Request_P0/21
+23 -> Request_P0/22
+
+0.000s
+
+ANALYSIS COMPLETED ---------------------------------------------- 
+
+# net AlgoritmoDoBanqueiro, 7 places, 6 transitions, 21 arcs           #
+# bounded, not live, possibly reversible                               #
+# abstraction        count      props      psets       dead       live #
+#      states           24          7          ?          5          5 # 
+# transitions           30          6          ?          0          0 #
