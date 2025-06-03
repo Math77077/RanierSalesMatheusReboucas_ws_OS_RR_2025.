@@ -1,0 +1,128 @@
+Tina version 3.8.5 -- 04/19/25 -- LAAS/CNRS
+
+mode -W
+
+INPUT NET ------------------------------------------------------- 
+
+parsed net AlgoritmoDoBanqueiroConcorrencia
+
+16 places, 6 transitions, 54 arcs
+
+net AlgoritmoDoBanqueiroConcorrencia
+tr Allocate_P1 [0,0] Allocate_P1_Trigger Available_R0 Available_R1 Available_R2 Request_P1_R0 Request_P1_R1 Request_P1_R2  -> Allocation_P1_R0 Allocation_P1_R1 Allocation_P1_R2 
+tr Check_Safety_P1_Fail [0,0] Request_P1_R0 Request_P1_R1 Request_P1_R2 Request_P1_Trigger Safe_State_P1  -> Deny_P1_Trigger Request_P1_R0 Request_P1_R1 Request_P1_R2 Request_P1_Trigger 
+tr Check_Safety_P1_OK [0,0] Request_P1_R0 Request_P1_R1 Request_P1_R2 Request_P1_Trigger Safe_State_P1  -> Allocate_P1_Trigger Request_P1_R0 Request_P1_R1 Request_P1_R2 Request_P1_Trigger 
+tr Deny_P1 [0,0] Deny_P1_Trigger Request_P1_R0 Request_P1_R1 Request_P1_R2 Request_P1_Trigger  -> Available_R0 Available_R1 Available_R2 
+tr Finish_P1 [0,0] Allocation_P1_R0 Allocation_P1_R1 Allocation_P1_R2  -> Available_R0 Available_R1 Available_R2 
+tr Request_P1 [0,0] Available_R0 Available_R1 Available_R2 Need_P1_R0 Need_P1_R1 Need_P1_R2  -> Request_P1_R0 Request_P1_R1 Request_P1_R2 Request_P1_Trigger 
+pl Available_R0 (3)
+pl Available_R1 (3)
+pl Available_R2 (2)
+pl Need_P1_R0 (1)
+pl Need_P1_R1 (2)
+pl Need_P1_R2 (2)
+pl Safe_State_P1 (1)
+
+0.000s
+
+REACHABILITY ANALYSIS ------------------------------------------- 
+
+bounded
+
+7 classe(s), 6 transition(s)
+
+CLASSES:
+
+class 0
+    marking
+	Available_R0*3 Available_R1*3 Available_R2*2 Need_P1_R0 Need_P1_R1*2 Need_P1_R2*2 Safe_State_P1
+    domain
+	0 <= Request_P1 <= 0
+
+class 1
+    marking
+	Available_R0*2 Available_R1*2 Available_R2 Need_P1_R1 Need_P1_R2 Request_P1_R0 Request_P1_R1 Request_P1_R2 Request_P1_Trigger Safe_State_P1
+    domain
+	0 <= Check_Safety_P1_Fail <= 0
+	0 <= Check_Safety_P1_OK <= 0
+
+class 2
+    marking
+	Available_R0*2 Available_R1*2 Available_R2 Deny_P1_Trigger Need_P1_R1 Need_P1_R2 Request_P1_R0 Request_P1_R1 Request_P1_R2 Request_P1_Trigger
+    domain
+	0 <= Deny_P1 <= 0
+
+class 3
+    marking
+	Allocate_P1_Trigger Available_R0*2 Available_R1*2 Available_R2 Need_P1_R1 Need_P1_R2 Request_P1_R0 Request_P1_R1 Request_P1_R2 Request_P1_Trigger
+    domain
+	0 <= Allocate_P1 <= 0
+
+class 4
+    marking
+	Available_R0*3 Available_R1*3 Available_R2*2 Need_P1_R1 Need_P1_R2
+    domain
+
+class 5
+    marking
+	Allocation_P1_R0 Allocation_P1_R1 Allocation_P1_R2 Available_R0 Available_R1 Need_P1_R1 Need_P1_R2 Request_P1_Trigger
+    domain
+	0 <= Finish_P1 <= 0
+
+class 6
+    marking
+	Available_R0*2 Available_R1*2 Available_R2 Need_P1_R1 Need_P1_R2 Request_P1_Trigger
+    domain
+
+
+REACHABILITY GRAPH:
+
+0 -> Request_P1 in [0,0]/1
+1 -> Check_Safety_P1_Fail in [0,0]/2, Check_Safety_P1_OK in [0,0]/3
+2 -> Deny_P1 in [0,0]/4
+3 -> Allocate_P1 in [0,0]/5
+4 -> 
+5 -> Finish_P1 in [0,0]/6
+6 -> 
+
+0.000s
+
+LIVENESS ANALYSIS ----------------------------------------------- 
+
+not live
+possibly reversible
+
+2 dead classe(s), 2 live classe(s)
+0 dead transition(s), 0 live transition(s)
+
+dead classe(s): 6 4
+
+STRONG CONNECTED COMPONENTS:
+
+0 : 4
+1 : 2
+2 : 6
+3 : 5
+4 : 3
+5 : 1
+6 : 0
+
+SCC GRAPH:
+
+0 ->
+1 -> Deny_P1/0
+2 ->
+3 -> Finish_P1/2
+4 -> Allocate_P1/3
+5 -> Check_Safety_P1_Fail/1, Check_Safety_P1_OK/4
+6 -> Request_P1/5
+
+0.000s
+
+ANALYSIS COMPLETED ---------------------------------------------- 
+
+# net AlgoritmoDoBanqueiroConcorrencia, 16 places, 6 transitions, 54 arcs#
+# bounded, not live, possibly reversible                               #
+# abstraction        count      props      psets       dead       live #
+#      states            7         16          ?          2          2 # 
+# transitions            6          6          ?          0          0 #
