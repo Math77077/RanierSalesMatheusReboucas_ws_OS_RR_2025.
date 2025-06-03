@@ -137,7 +137,7 @@ int main() {
     requestResources(1, request1);
 
     int request2[R] = {3, 4, 0}; // P4 solicita recursos
-    requestResources(2, request2);
+    requestResources(4, request2);
 
     return 0;
 }
