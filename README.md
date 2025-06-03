@@ -15,6 +15,7 @@ A proposta consiste em desenvolver um programa que verifica, a cada requisição
 ```bash
 .
 ├── docs/                                                         # Documentação do projeto
+│   ├── teste_de_implementacao.md                                 # Testes realizados no código do banqueiro.c
 │   ├── ComportamentoAlgoritmoDoBanqueiro.md                      # Interpretação da análise feita com o TINA do Algoritmo do Banqueiro
 │   └── ComportamentoAlgoritmoDoBanqueiroComConcorrencia.md       # Interpretação da análise feita com o TINA do Algoritmo do Banqueiro com Concorrencia
 │
@@ -25,7 +26,7 @@ A proposta consiste em desenvolver um programa que verifica, a cada requisição
 │   ├── AlgortimoDoBanqueiro.net             # Rede de Petri em formato analisável pela TINA
 │   ├── AlgortimoDoBanqueiroConcorrencia.net # Rede de Petri com Concorrencia em formato analisável pela TINA 
 │   ├── analise_tina.txt                     # Resultado da Análise da TINA para Rede de Petri
-│   └──analise_tina_concorrencia.txt         # Resultado da Análise da TINA para Rede de Petri com Concorrencia
+│   └── analise_tina_concorrencia.txt         # Resultado da Análise da TINA para Rede de Petri com Concorrencia
 │   
 │
 ├── img/                                                  # Imagens usadas na documentação ou apresentação
@@ -128,8 +129,7 @@ gcc banqueiro.c -o banqueiro
 
 ## 📌 Observações
 
-- A documentação das análises das redes de Petri está disponível na pasta `docs/`.
-- Os testes do código em C foram realizados por Ranier, e podem ser incluídos em breve.
+- A documentação das análises das redes de Petri e os testes do código está disponível na pasta `docs/`.
 
 
 
