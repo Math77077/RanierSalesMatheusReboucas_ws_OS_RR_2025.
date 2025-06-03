@@ -15,21 +15,21 @@ A proposta consiste em desenvolver um programa que verifica, a cada requisição
 ```bash
 .
 ├── docs/                                                         # Documentação do projeto
-|   ├── ComportamentoAlgoritmoDoBanqueiro.md                      # Interpretação da análise feita com o TINA do Algoritmo do Banqueiro
+│   ├── ComportamentoAlgoritmoDoBanqueiro.md                      # Interpretação da análise feita com o TINA do Algoritmo do Banqueiro
 │   └── ComportamentoAlgoritmoDoBanqueiroComConcorrencia.md       # Interpretação da análise feita com o TINA do Algoritmo do Banqueiro com Concorrencia
 │
 ├── src/                                     # Código-fonte e modelagem
 │   ├── banqueiro.c                          # Implementação do algoritmo do banqueiro em C
 │   ├── AlgortimoDoBanqueiro.pn              # Rede de Petri do algoritmo do banqueiro
 │   ├── AlgortimoDoBanqueiroConcorrencia.pn  # Rede de Petri com concorrência
-|   ├── AlgortimoDoBanqueiro.net             # Rede de Petri em formato analisável pela TINA
-|   ├── AlgortimoDoBanqueiroConcorrencia.net # Rede de Petri com Concorrencia em formato analisável pela TINA 
-|   ├── analise_tina.txt                     # Resultado da Análise da TINA para Rede de Petri
-|   └──analise_tina_concorrencia.txt         # Resultado da Análise da TINA para Rede de Petri com Concorrencia
+│   ├── AlgortimoDoBanqueiro.net             # Rede de Petri em formato analisável pela TINA
+│   ├── AlgortimoDoBanqueiroConcorrencia.net # Rede de Petri com Concorrencia em formato analisável pela TINA 
+│   ├── analise_tina.txt                     # Resultado da Análise da TINA para Rede de Petri
+│   └──analise_tina_concorrencia.txt         # Resultado da Análise da TINA para Rede de Petri com Concorrencia
 │   
 │
 ├── img/                                                  # Imagens usadas na documentação ou apresentação
-|   ├── rede_de_petri_sem_concorrencia.png             # Visualização da Rede de Petri do Algoritmo do Banqueiro
+│   ├── rede_de_petri_sem_concorrencia.png             # Visualização da Rede de Petri do Algoritmo do Banqueiro
 │   └── rede_de_petri_com_concorrencia.png             # Visualização da Rede de Petri do Algoritmo do Banqueiro com Concorrencia
 │
 └── README.md                       # Este arquivo
