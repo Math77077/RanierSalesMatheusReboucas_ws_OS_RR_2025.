@@ -1,0 +1,25 @@
+net AlgoritmoDoBanqueiroConcorrencia
+tr Request_P1 [0,0] Available_R2 Available_R1 Available_R0 Need_P1_R0 Need_P1_R1 Need_P1_R2 -> Request_P1_R0 Request_P1_R1 Request_P1_R2 Request_P1_Trigger 
+tr Check_Safety_P1_OK [0,0] Request_P1_Trigger Request_P1_R0 Request_P1_R1 Request_P1_R2 Safe_State_P1 -> Allocate_P1_Trigger Request_P1_R0 Request_P1_R1 Request_P1_R2 Request_P1_Trigger 
+tr Allocate_P1 [0,0] Allocate_P1_Trigger Available_R0 Available_R1 Available_R2 Request_P1_R0 Request_P1_R1 Request_P1_R2 -> Allocation_P1_R0 Allocation_P1_R1 Allocation_P1_R2 
+tr Finish_P1 [0,0] Allocation_P1_R0 Allocation_P1_R1 Allocation_P1_R2 -> Available_R0 Available_R1 Available_R2 
+tr Deny_P1 [0,0] Deny_P1_Trigger Request_P1_R0 Request_P1_R1 Request_P1_R2 Request_P1_Trigger -> Available_R0 Available_R1 Available_R2 
+tr Check_Safety_P1_Fail [0,0] Safe_State_P1 Request_P1_Trigger Request_P1_R0 Request_P1_R1 Request_P1_R2 -> Deny_P1_Trigger Request_P1_R2 Request_P1_R1 Request_P1_R0 Request_P1_Trigger 
+
+pl Available_R0 (3)
+pl Allocate_P1_Trigger (0)
+pl Deny_P1_Trigger (0)
+pl Available_R1 (3)
+pl Available_R2 (2)
+pl Need_P1_R1 (2)
+pl Request_P1_R1 (0)
+pl Request_P1_R2 (0)
+pl Safe_State_P1 (1)
+pl Request_P1_R0 (0)
+pl Need_P1_R0 (1)
+pl Allocation_P1_R2 (0)
+pl Allocation_P1_R1 (0)
+pl Allocation_P1_R0 (0)
+pl Request_P1_Trigger (0)
+pl Need_P1_R2 (2)
+
