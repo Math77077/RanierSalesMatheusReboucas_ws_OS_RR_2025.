@@ -1,0 +1,16 @@
+net AlgoritmoDoBanqueiro
+tr Request_P0 [0,0] Need_P0_R0 Available_R0 -> Request_P0_R0 
+tr Check_Safety_P0_OK [0,0] Request_P0_R0 Safe_State -> Allocate_P0_Trigger 
+tr Allocate_P0 [0,0] Request_P0_R0 Available_R0 Need_P0_R0 Allocate_P0_Trigger -> Allocation_P0_R0 
+tr Deny_P0 [0,0] Deny_P0_Trigger Request_P0_R0 -> Available_R0 Need_P0_R0 Safe_State 
+tr Finish_P0 [0,0] Allocation_P0_R0 -> Available_R0 
+tr Check_Safety_P0_Fail [0,0] Request_P0_R0 Safe_State -> Deny_P0_Trigger 
+
+pl Available_R0 (3)
+pl Allocation_P0_R0 (0)
+pl Need_P0_R0 (7)
+pl Request_P0_R0 (0)
+pl Safe_State (1)
+pl Allocate_P0_Trigger (0)
+pl Deny_P0_Trigger (0)
+
