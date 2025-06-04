@@ -20,6 +20,7 @@ Este documento apresenta a análise formal da rede de Petri modelando o algoritm
   - **6 Transitions**
   - **21 Arcs**
 
+![Image](../img/Rede_de_Petri_sem_concorrencia.png)
 ---
 
 ## 🧪 Resultado da Análise (via `./tina AlgoritmoDoBanqueiro.net`)
