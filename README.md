@@ -16,6 +16,7 @@ A proposta consiste em desenvolver um programa que verifica, a cada requisição
 .
 ├── docs/                                                         # Documentação do projeto
 │   ├── teste_de_implementacao.md                                 # Testes realizados no código do banqueiro.c
+│   ├── apresentacao_implementacao_banqueiro.pdf                  # Slides de apresentação da implementação e análise do algoritmo do banqueiro
 │   ├── ComportamentoAlgoritmoDoBanqueiro.md                      # Interpretação da análise feita com o TINA do Algoritmo do Banqueiro
 │   └── ComportamentoAlgoritmoDoBanqueiroComConcorrencia.md       # Interpretação da análise feita com o TINA do Algoritmo do Banqueiro com Concorrencia
 │
