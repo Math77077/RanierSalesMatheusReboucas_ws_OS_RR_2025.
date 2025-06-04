@@ -85,7 +85,7 @@ A modelagem cumpre seu propósito de ilustrar os principais comportamentos do al
 ## 📁 Arquivos Relacionados
 
 - `AlgoritmoDoBanqueiro.net` – Arquivo da rede de Petri gerado no Snoopy
-- `analise_tina.txt` – Saída completa da análise realizada com TINA
+- [`analise_tina.txt`](../src/analise_tina.txt) – Saída completa da análise realizada com TINA
 
 ---
 
