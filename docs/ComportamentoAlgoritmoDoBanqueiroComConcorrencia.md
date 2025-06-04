@@ -12,6 +12,8 @@ Este documento apresenta a análise feita com a ferramenta **TINA (TIme petri Ne
   - **Transitions:** 6
   - **Arcs:** 54
 
+![Image](../img/rede_de_petri_com_concorrencia.png)
+
 ---
 
 ## 📌 Estrutura da Rede
@@ -89,3 +91,5 @@ O modelo atual pode ser estendido para múltiplos processos (P2, P3, ...) ou mod
 # abstraction        count      props      psets       dead       live
 #      states            7         16          ?          2          2
 # transitions            6          6          ?          0          0
+```
+Veja a análise na íntegra [Aqui](../src/analise_tina_concorrencia.txt)
